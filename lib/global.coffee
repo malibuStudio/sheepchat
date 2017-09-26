@@ -23,3 +23,6 @@
   @withRemove
   @Users
 } = @Vulcan
+
+import blaze from 'meteor/gadicc:blaze-react-component'
+@Blaze = blaze

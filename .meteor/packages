@@ -27,3 +27,9 @@ vulcan:forms
 stolinski:stylus-multi
 tap:i18n
 dalgard:jade
+
+# for blaze
+blaze
+templating
+reactive-var
+gadicc:blaze-react-component
