@@ -1,4 +1,7 @@
 class HomeComponent extends Component
+  button1Click: (e)->
+    alert '링딩동'
+    e.preventDefault()
   render: ->
     k 'div',
       k 'div.NavBar',
@@ -9,9 +12,7 @@ class HomeComponent extends Component
                 'Link 1'
             k 'li.Navbar__button',
               k 'a',
-                onClick: (e)->
-                  alert '링딩동'
-                  e.preventDefault()
+                onClick: @button1Click
                 'Button 1'
       k 'div',
         k 'h1',
