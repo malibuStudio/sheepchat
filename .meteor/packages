@@ -24,3 +24,5 @@ accounts-password@1.4.0
 # example-interfaces
 coffeescript
 vulcan:forms
+stolinski:stylus-multi
+tap:i18n
