@@ -1,0 +1,37 @@
+//
+// ─── IMAGES ─────────────────────────────────────────────────────────────────────
+//
+
+$imgWrapperBackground         = none
+$maxRatioNumber               = 16
+
+make-ratio-wrapper($ratioW, $ratioH)
+  position relative
+  background-size cover
+  background-color $imgWrapperBackground
+  &:before
+    position relative
+    content ''
+    padding-top "calc(%s / %s * 100%)" % ($ratioH $ratioW)
+    display block
+
+.img-wrapper
+  background $imgWrapperBackground
+  for $w in 1..$maxRatioNumber  
+    for $h in 1..$maxRatioNumber
+      &.r-{$w}-{$h}
+        make-ratio-wrapper($w, $h)
+        img
+          position absolute
+          top 50%
+          left 50%
+          transform translateX(-50%) translateY(-50%)
+          max-width 100%
+          max-height 100%
+          /** Not Supported in IE and Edge **/
+          width 100%
+          height 100%
+          object-fit cover
+
+  
+

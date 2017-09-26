@@ -1,0 +1,113 @@
+//
+// ─── NAVIGATION BAR ─────────────────────────────────────────────────────────────
+//
+//
+// ─── NAVBAR ─────────────────────────────────────────────────────────────────────
+//
+
+
+// NavBar Variables
+$navbar-height                  = 80px
+$navbar-border-bottom-width     = 0
+$navbar-border-bottom-color     = $grayLight
+
+// NavBar Link Variables
+$navbar-link-height             = 30px
+$navbar-link-font-size          = 14px
+$navbar-link-gutter             = 16px
+$navbar-link-color              = $blackText
+$navbar-link-text-decoration    = none
+
+// NavBar Button Variables
+$navbar-button-font-size          = 14px
+$navbar-button-height             = $navbar-button-font-size * 2.25
+$navbar-button-gutter             = $navbar-button-height * 0.5
+$navbar-button-color              = white
+$navbar-button-background-color   = $wetAsphalt
+$navbar-button-text-decoration    = none
+$navbar-button-border-radius      = 2px
+
+
+.NavBar
+  height $navbar-height
+  border-bottom $navbar-border-bottom-width solid $navbar-border-bottom-color
+
+
+.NavBar--fixed
+  position fixed
+  top 0
+  right 0
+  left 0
+
+
+.NavBar__inner
+  clearfix()
+  position relative
+  height $navbar-height - $navbar-border-bottom-width
+  @extend .container
+
+/* .NavBar__menu */
+ul.NavBar__menu
+  reset-list()
+  clearfix()
+  height inherit
+  &.NavBar__menu--right
+    float right
+    margin-right $navbar-link-gutter /* Comment to not compensate gutter of li a */
+    
+  &.NavBar__menu--left
+    float left
+    margin-left $navbar-link-gutter /* Comment to not compensate gutter of li a */
+
+/* NavBar__item */
+li.NavBar__item
+  display table
+  height inherit
+  float left !important /* Stylus Compiler Bug requires !important*/
+
+/* .NavBar__item a */
+li.NavBar__item a
+  display table-cell /* Not supported IE7 and below */
+  vertical-align middle 
+  height $navbar-link-height
+  line-height $navbar-link-height
+  font-size $navbar-link-font-size
+  padding 0 $navbar-link-gutter
+  color $navbar-link-color
+  text-decoration $navbar-link-text-decoration
+  &:hover
+    color $pastelBlue
+  +tablet()
+    font-size 13px
+  +mobile()
+    font-size 12px
+    
+
+/* .NavBar__Button */
+li.NavBar__button
+  display block
+  height inherit
+  float left !important /* Stylus Compiler Bug requires !important*/
+
+/* .NavBar__Button a */
+li.NavBar__button a
+  display block
+  height $navbar-button-height
+  line-height $navbar-button-height
+  font-size $navbar-button-font-size
+  padding 0 $navbar-button-gutter
+  color $navbar-button-color
+  margin ($navbar-height - $navbar-border-bottom-width - $navbar-button-height) * 0.5 0
+  margin-right $navbar-button-gutter * 0.5
+  background-color $navbar-button-background-color
+  text-decoration $navbar-button-text-decoration
+  border-radius $navbar-button-border-radius
+  &:hover
+    background-color $navbar-button-background-color - 15%
+  .NavBar__menu--right  &
+    margin-right 0 
+    margin-left $navbar-button-gutter * 0.5
+  +tablet()
+    font-size 13px
+  +mobile()
+    font-size 12px

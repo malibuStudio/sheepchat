@@ -1,0 +1,35 @@
+//
+// ─── HTML and BODY ──────────────────────────────────────────────────────────────
+//
+  
+html, body
+  position relative
+  min-height 100%
+  height 100%
+  word-break keep-all
+  font-family $globalFont
+  
+body
+  min-height 100vh
+  overflow-x hidden
+
+body.body--no-scroll
+  overflow hidden
+  height 100%
+
+//
+// ─── WRAPPER ────────────────────────────────────────────────────────────────────
+//  
+
+#wrapper
+  position relative
+  min-height 100%
+  height auto
+  margin 0 auto
+  clearfix()
+  // padding-top "calc(%s + %s)" % ($navbarHeight $navbarHeight)
+  // padding-top $navbarHeight
+  transform translateX(0%)
+  transition 750ms transform cubic-bezier(0.19, 1, 0.22, 1)
+  @media screen and (max-width 992px)
+    // padding-top $navbarHeight

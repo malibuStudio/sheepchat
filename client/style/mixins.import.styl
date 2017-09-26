@@ -1,0 +1,61 @@
+//
+// ─── MIXINS ─────────────────────────────────────────────────────────────────────
+//
+
+/** FLOAT **/
+.float--left
+  float left !important
+.float--right 
+  float right !important
+
+/** FONT **/
+serif()
+  font-family $globalFontSerif, serif
+
+
+/** MULTI LINE CLAMP **/
+multiline($size, $lineHeight, $lineCount)
+  display block
+  display -webkit-box
+  font-size $size
+  max-width 100%
+  max-height $size * $lineHeight * $lineCount /** None -webkit- Fallback **/
+  line-height $lineHeight
+  -webkit-box-orient vertical
+  -webkit-line-clamp $lineCount
+  overflow hidden
+  text-overflow ellipsis
+  
+/** POSITIONING CENTERING **/
+absolute-horizontal-center()
+  position absolute
+  left 50%
+  transform translateX(-50%)
+  
+absolute-vertical-center()
+  position absolute
+  top 50%
+  transform translateY(-50%)
+
+
+
+/** MEDIA RULE MIXINS **/
+mobile()
+  @media only screen and (max-width 480px)
+    {block}
+
+tablet()
+  @media only screen and (max-width 768px)
+    {block}
+
+medium()
+  @media only screen and (max-width 992px)
+    {block}
+
+large()
+  @media only screen and (max-width 1200px)
+    {block}
+
+larger()
+  @media only screen and (max-width 1440px)
+    {block}
