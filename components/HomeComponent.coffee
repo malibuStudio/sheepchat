@@ -1,13 +1,11 @@
 class HomeComponent extends Component
   render: ->
-	  c 'div', null, [
-		  c 'h1', null,
-			  'Hello, SheepChat.'
-			c 'p', null,
-			  'sheepchat에 대해 araboja'
-			c Link, 
-			  to: 'about'
-			, 
-			  'about'
-		]
+    k 'div',
+      k 'h1',
+        'Hello, SheepChat',
+      k 'p',
+        'SheepChat에 대해 araboja',
+      k Link,
+        to: 'about'
+        'About'
 registerComponent 'HomeComponent', HomeComponent
