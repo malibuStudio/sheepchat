@@ -1,0 +1,13 @@
+{
+  "vulcanjs-cli": {
+    "appName": "sheepchat",
+    "isVulcan": true,
+    "packageManager": "yarn",
+    "reactExtension": "jsx",
+    "storyBook": {
+      "isUsed": "pending",
+      "setupStatus": "pending"
+    },
+    "packages": {}
+  }
+}
